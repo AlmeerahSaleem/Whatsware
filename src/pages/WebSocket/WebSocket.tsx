@@ -43,20 +43,9 @@ function WebSocket() {
     };
   }, []);
 
-  // // Function to send a message to the server
-  // const sendMessageToServer = (message) => {
-  //   if (socketClient) {
-  //     socketClient.emit("message", message);
-  //   } else {
-  //     console.error("Socket connection not established");
-  //   }
-  // };
-
   // Function to send a message to the server
   const sendMessageToServer = (message) => {
     if (socketClient) {
-      // const message = `Hello from ${socketClient.id} from React-client \n`;
-      // const message = `Hello from React-client \n`;
       socketClient.emit("message", message);
 
       // Add the message to the list of messages for the current client
@@ -103,12 +92,7 @@ function WebSocket() {
   return (
     <>
       <title>WhatsWare-Commute Channel</title>
-      {/* <div>
-        <a href="#">
-          <img src={whatswareLogo} className="logo" alt="WhatsWare logo" />
-        </a>
-      </div> */}
-      {/* <h1>WhatsWare</h1> */}
+
       <div className="card">
         <nav className="dashboard-nav">
           <ul>
@@ -157,10 +141,6 @@ function WebSocket() {
             </button>
           </div>
         </div>
-
-        {/* <button>
-          <Link to="/Login">Sign Out</Link>
-        </button> */}
 
         <Outlet />
       </div>

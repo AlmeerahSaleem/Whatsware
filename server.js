@@ -3,32 +3,10 @@ import { Server } from "socket.io";
 import * as http from "http";
 import mongoose from "mongoose";
 
-// const express = require("express");
-// const { Server } = require("socket.io");
-// const http = require("http");
-
-// const mongoose = require("mongoose");
-
 mongoose.connect(
   "mongodb+srv://almeerahsaleem:ks1pBvvtnjfQLwkm@whatsware.rlq9gwq.mongodb.net/?retryWrites=true&w=majority"
 );
 import User from "./src/models/userModel.js";
-// const User = require("./src/models/userModel");
-
-// async function insert() {
-//   await User.create({
-//     // name: "Almeerah",
-//     Std_Id: 101,
-//     Std_Name: "Maria Sajid Gaddi",
-//     Std_Reg_No: 2012210,
-//     Email: "bscs2012210@szabist.pk",
-//     Password: "bscs2012210",
-//     Batch: 2020,
-//     Section: "C",
-//     Role: "Student",
-//   });
-// }
-// insert();
 
 const app = express();
 const PORT = 8000;

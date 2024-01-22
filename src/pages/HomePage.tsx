@@ -17,10 +17,6 @@ function HomePage() {
       <h1>WhatsWare</h1>
       <div className="card">
         <nav>
-          {/* <ul> */}
-          {/* <li>
-              <Link to="/">Homepage</Link>
-            </li> */}
           <Link to="/login">
             <button
               style={{
@@ -40,8 +36,6 @@ function HomePage() {
               Login with WhatsWare
             </button>
           </Link>
-          {/* s */}
-          {/* </ul> */}
         </nav>
 
         <Outlet />

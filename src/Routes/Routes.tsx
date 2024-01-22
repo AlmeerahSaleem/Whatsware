@@ -5,7 +5,7 @@ import Login from "../pages/Login/Login.jsx";
 import WebSocket from "../pages/WebSocket/WebSocket.tsx";
 import Dashboard from "../pages/Dashboard/Dashboard.tsx";
 import ErrorPage from "../pages/ErrorPage.tsx";
-import Server from "../pages/server.tsx";
+import Server from "../pages/Server.tsx";
 
 export const router = createBrowserRouter([
   {

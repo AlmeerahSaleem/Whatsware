@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import whatswareLogo from "./assets/whatsware.svg";
-// import viteLogo from "/vite.svg";
+import { useEffect } from "react";
 import "./App.css";
 import { Outlet } from "react-router";
 import { socket } from "./socket";
@@ -13,24 +10,11 @@ function App() {
     }, 2000);
 
     socket.on("reply", (data) => {
-      //console.log("Client disconnected");
-
       console.log(`client receives ${JSON.stringify(data)} - ${socket.id}`);
-      //io.to(socket.id).emit('reply', data);
     });
   }, []);
   return (
     <>
-      {/* <div>
-        <a href="#">
-          <img
-            src={whatswareLogo}
-            className="logo whatsware"
-            alt="WhatsWare logo"
-          />
-        </a>
-      </div>
-      <h1>WhatsWare</h1> */}
       <div className="card">
         <>
           <Outlet />

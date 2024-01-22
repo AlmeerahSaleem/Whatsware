@@ -17,11 +17,8 @@ function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
     // Handle login logic here
-    //add validations
     console.log(`Email: ${email}, Password: ${password}`);
   };
-
-  // const handleError = () => {};
 
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
@@ -31,26 +28,12 @@ function Login() {
     // Extract the registration ID from the user's email address
     var regid = userObject.email.substring(4, userObject.email.length - 11);
     // Create a new user object that includes the registration ID
-    //regid: userObject.regid,
     var newUser = {
       name: userObject.name,
       email: userObject.email,
       picture: userObject.picture,
       regid: regid,
     };
-    // validate email domain
-    // if (userObject.email.endsWith("@szabist.pk")) {
-    //   // storing user
-    //   setUser(userObject);
-    //   // hides that login button after logging in
-    //   document.getElementById("signinDiv").hidden = true;
-    //   //   document.getElementById("card").hidden = true;
-    // } else {
-    //   // display error message if the email is not from szabist.pk
-    //   alert(
-    //     "Only users with szabist.pk email addresses are allowed to log in."
-    //   );
-    // }
 
     if (userObject.email.endsWith("@szabist.pk")) {
       // storing user
@@ -66,8 +49,6 @@ function Login() {
 
   function handleSignOut(event) {
     //managing cahe with state
-    // setUser({});
-    // document.getElementById("signinDiv").hidden = false;
     setUser(null);
     setIsSignedIn(false);
     setmanualLogin(true);
@@ -87,15 +68,14 @@ function Login() {
       theme: "filled_black",
       size: "large",
       shape: "pill",
-      width: "450px", // increase the width here
-      //   height: "50px",
+      width: "450px",
       logo_alignment: "left",
     });
     //one tap dialogue??
     //load page first time >> promt user to log in *easily*
     //shows accounts u recently used to log in
     //acc we have in google cache
-    // google.accounts.id.prompt();
+    google.accounts.id.prompt();
   }, []);
 
   //if we have no user: signin button
@@ -141,7 +121,7 @@ function Login() {
                       fontSize: 16,
                       color: "#212121",
                       backgroundColor: "#fff",
-                      marginBottom: -7 /* Add spacing between fields*/,
+                      marginBottom: -7,
                     }}
                   />
                   <input
@@ -190,7 +170,6 @@ function Login() {
                   style={{
                     backgroundColor: "grey",
                     border: "2px black",
-                    // color: "white",
                     padding: "15px 32px",
                     textAlign: "center",
                     textDecoration: "none",
@@ -205,40 +184,8 @@ function Login() {
                   Go to Dashboard
                 </button>
               </Link>
-              {/* user actually has full user attributes
-              which means our user is logged in */}
-              {/* <button onClick={(e) => handleSignOut(e)}>Sign Out</button> */}
             </div>
           )}
-
-          {/* {user && (
-            <div>
-              <img src={user.picture}></img>
-              <h3>{user.name}</h3>
-              <p>{user.email}</p>
-              <p>Registration ID: {user.regid}</p>
-            </div>
-          )} */}
-
-          {/* {Object.keys(user).length != 0 && (
-            <div>
-              <img src={user.picture} />
-              <h3>{user.name}</h3>
-              <p>{user.email}</p>
-              <p>{user.regid}</p>
-              user actually has full user attributes
-              which means our user is logged in
-              <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
-            </div>
-          )} */}
-
-          {/* user actually has full user attributes
-              which means our user is logged in */}
-          {/* {Object.keys(user).length != 0 && (
-            <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
-          )} */}
-
-          {/* <button>Login with Google</button> */}
         </div>
       </div>
     </>
