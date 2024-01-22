@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import io from "socket.io-client";
 
 const socket = io("http://localhost:8000");
@@ -12,7 +12,7 @@ function App() {
       setMessage(data);
     });
     socket.on("message", (data) => {
-      //   setMessage((prevMessage) => prevMessage + "\n" + data);
+      // setMessages((prevMessage) => prevMessage + "\n" + data);
       setMessages((prevMessages) => [...prevMessages, data]);
     });
   }, [socket]);
