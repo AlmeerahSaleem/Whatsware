@@ -10,7 +10,6 @@ import User from "./src/models/userModel.js";
 
 const app = express();
 const PORT = 8000;
-// const PORT = 3000;
 
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, { cors: { origin: "*" } });
